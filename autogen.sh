@@ -25,4 +25,18 @@
 # Exit on errors
 set -e
 
-autoreconf -f -i -I m4
+autoreconf -f -i -I m4 -v
+
+./configure \
+PKG_CONFIG_PATH="$HOME/CLionProjects/libspectrum-od-source/libspectrum-install/lib/pkgconfig" \
+LIBSPECTRUM_CFLAGS="-I$HOME/CLionProjects/libspectrum-od-source/libspectrum-install/include" \
+LIBSPECTRUM_LIBS="-L$HOME/CLionProjects/libspectrum-od-source/libspectrum-install/lib \
+-l:libspectrum.a \
+-lbz2" \
+CC=mipsel-gcw0-linux-uclibc-gcc \
+CXX=mipsel-gcw0-linux-uclibc-g++ \
+--host=mipsel-gcw0-linux-uclibc \
+--with-gcw0 \
+--disable-sdl2 \
+--with-sdl-prefix=/opt/gcw0-toolchain/usr/mipsel-gcw0-linux-uclibc/sysroot/usr \
+CFLAGS='-g -mips32r2 -O3 -O0'
