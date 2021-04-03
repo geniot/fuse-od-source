@@ -445,6 +445,7 @@ sdl_load_status_icon( const char*filename, SDL_Surface **red, SDL_Surface **gree
 #define OD_ADD_MODE( mode, width, height ) \
   if ( add_mode & mode ) { \
     modes[i] = malloc( sizeof (SDL_Rect) ); \
+    modes[i+1] = NULL; \
     if ( modes[i] ) { \
       modes[i]->x = modes[i]->y = 0; \
       modes[i]->w = width; \

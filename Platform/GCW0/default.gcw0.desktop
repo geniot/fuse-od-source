@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Fuse FUSE_VERSION
+Name=Fuse
 Comment=Fuse ZX Spectrum emulator FUSE_VERSION (vFUSE_OD_VERSION)
 Exec=fuse-gcw0 %f
 Icon=fuse
